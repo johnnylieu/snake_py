@@ -1,4 +1,4 @@
-# Snake in python
+# Snake
 
 This is the Snake game, similar to the one on the older Nokia phones.
 
