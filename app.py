@@ -74,3 +74,10 @@ def run_game():
 
         x += x_speed
         y += y_speed
+
+        game_display.fill(black)
+        pygame.draw.rect(game_display, orange, [target_x, target_y, snake_size, snake_size])
+        snake_pixels.append([x,y])
+
+        if len(snake_pixels) > snake_length:
+            del snake_pixels[0]
