@@ -119,3 +119,5 @@ def run_game():
 
     pygame.quit()
     quit()
+
+run_game()
