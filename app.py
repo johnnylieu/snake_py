@@ -30,4 +30,22 @@ def print_score(score):
 
 def draw_snake(snake_size, snake_pixels):
     for pixel in snake_pixels:
-        pygame.draw.rect(game_display, white, [pixel[0], pixel[1], snake_size, snake_size])
+        pygame.draw.rect(game_display, white, [pixel[0], pixel[1], snake_size, snake_size]) # draws pixel at 0,1 on x y axis with the size of snake
+
+def run_game():
+
+    game_over = False
+    game_close = False
+
+    x = width / 2
+    y = height / 2
+
+    x_speed = 0
+    y_speed = 0
+
+    snake_pixels = []
+    snake_length = 1
+
+    # spawning random targets
+    target_x = round(random.randrange(0, width-snake_size) / 10.0) * 10.0
+    target_y = round(random.randrange(0, height-snake_size) / 10.0) * 10.0
