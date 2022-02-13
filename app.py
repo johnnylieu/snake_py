@@ -71,7 +71,7 @@ def run_game():
                     game_over = True
                     game_close = False
 
-        for event in pygame.even.get():
+        for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game_over = True
             if event.type == pygame.KEYDOWN:
