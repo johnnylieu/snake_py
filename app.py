@@ -49,3 +49,12 @@ def run_game():
     # spawning random targets
     target_x = round(random.randrange(0, width-snake_size) / 10.0) * 10.0
     target_y = round(random.randrange(0, height-snake_size) / 10.0) * 10.0
+
+    while not game_over:
+
+        for event in pygame.even.get():
+            if even.type == pygame.QUIT:
+                game_over = True
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    x_speed = -snake_size # goes left for negatize size (left is decreasing x coordinate where as down is decreasing y coordinate)
