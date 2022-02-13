@@ -53,8 +53,24 @@ def run_game():
     while not game_over:
 
         for event in pygame.even.get():
-            if even.type == pygame.QUIT:
+            if event.type == pygame.QUIT:
                 game_over = True
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
                     x_speed = -snake_size # goes left for negatize size (left is decreasing x coordinate where as down is decreasing y coordinate)
+                    y_speed = 0 # cannot move diagonally
+                if event.key == pygame.K_RIGHT:
+                    x_speed = snake_size
+                    y_speed = 0
+                if event.key == pygame.K_UP:
+                    x_speed = 0
+                    y_speed = -snake_size
+                if event.key == pygame.K_DOWN:
+                    x_speed = 0
+                    y_speed = snake_size
+
+        if x >= width or x < 0 or y >= height or y < 0: # when it hits the borders
+            game_close = True
+
+        x += x_speed
+        y += y_speed
